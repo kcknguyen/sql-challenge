@@ -40,3 +40,16 @@ on e.emp_no = dm.emp_no
 where d.dept_name='Sales';
 
 --query # 7
+Select d.dept_name,e.emp_no, e.last_name,e.first_name
+From departments as d
+Inner join dept_emp as dm 
+on d.dept_no = dm.dept_no
+Inner join employees as e 
+on e.emp_no = dm.emp_no
+where d.dept_name in ('Sales','Development');
+
+--query # 8
+SELECT last_name, COUNT(*) 
+FROM Employees
+GROUP BY last_name
+ORDER BY count(*) desc;
